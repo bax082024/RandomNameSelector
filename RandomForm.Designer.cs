@@ -42,6 +42,7 @@
             label4 = new Label();
             buttonPickRandom = new Button();
             buttonReset = new Button();
+            buttonMove = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -49,6 +50,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(buttonMove);
             panel1.Controls.Add(buttonReset);
             panel1.Controls.Add(buttonPickRandom);
             panel1.Controls.Add(label4);
@@ -206,6 +208,17 @@
             buttonReset.Text = "RESET";
             buttonReset.UseVisualStyleBackColor = true;
             // 
+            // buttonMove
+            // 
+            buttonMove.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonMove.Location = new Point(854, 551);
+            buttonMove.Name = "buttonMove";
+            buttonMove.Size = new Size(113, 38);
+            buttonMove.TabIndex = 13;
+            buttonMove.Text = "<<<   Move";
+            buttonMove.TextAlign = ContentAlignment.MiddleLeft;
+            buttonMove.UseVisualStyleBackColor = true;
+            // 
             // RandomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -238,5 +251,6 @@
         private Label label4;
         private Button buttonReset;
         private Button buttonPickRandom;
+        private Button buttonMove;
     }
 }
