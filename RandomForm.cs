@@ -1,8 +1,8 @@
 namespace RandomNameSelector
 {
-    public partial class Form1 : Form
+    public partial class RandomForm : Form
     {
-        public Form1()
+        public RandomForm()
         {
             InitializeComponent();
         }
