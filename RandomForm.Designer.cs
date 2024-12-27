@@ -32,12 +32,18 @@
             listBox2 = new ListBox();
             listBox1 = new ListBox();
             btnSelectedName = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            lblTitle = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(lblTitle);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(btnSelectedName);
             panel1.Controls.Add(listBox2);
             panel1.Controls.Add(listBox1);
@@ -69,6 +75,7 @@
             // 
             // btnSelectedName
             // 
+            btnSelectedName.Anchor = AnchorStyles.None;
             btnSelectedName.AutoSize = true;
             btnSelectedName.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSelectedName.Location = new Point(420, 327);
@@ -76,6 +83,37 @@
             btnSelectedName.Size = new Size(115, 32);
             btnSelectedName.TabIndex = 2;
             btnSelectedName.Text = "label1";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Location = new Point(79, 165);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 3;
+            label1.Text = "label1";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Location = new Point(868, 178);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 4;
+            label2.Text = "label2";
+            // 
+            // lblTitle
+            // 
+            lblTitle.Anchor = AnchorStyles.None;
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Snap ITC", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(192, 29);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(665, 63);
+            lblTitle.TabIndex = 5;
+            lblTitle.Text = "Random Name Selector";
             // 
             // RandomForm
             // 
@@ -97,5 +135,8 @@
         private ListBox listBox2;
         private ListBox listBox1;
         private Label btnSelectedName;
+        private Label lblTitle;
+        private Label label2;
+        private Label label1;
     }
 }
