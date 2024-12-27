@@ -59,22 +59,17 @@ namespace RandomNameSelector
        
         private void buttonMove_Click(object sender, EventArgs e)
         {
-            // Check if the Used Names list has any items
             if (listBoxUsedNames.Items.Count > 0)
             {
-                // Loop through all items in the Used Names list
                 foreach (var item in listBoxUsedNames.Items)
                 {
-                    // Add each item back to the Names list
                     listBoxNames.Items.Add(item);
                 }
 
-                // Clear the Used Names list after moving all names
                 listBoxUsedNames.Items.Clear();
             }
             else
             {
-                // Show a message if the Used Names list is already empty
                 MessageBox.Show("The 'Used Names' list is already empty.",
                                 "No Names to Move",
                                 MessageBoxButtons.OK,
@@ -90,16 +85,52 @@ namespace RandomNameSelector
 
                 if (files.All(file => file.EndsWith(".txt", StringComparison.OrdinalIgnoreCase)))
                 {
-                    e.Effect = DragDropEffects.Copy; // Show Copy cursor
+                    e.Effect = DragDropEffects.Copy;
                 }
                 else
                 {
-                    e.Effect = DragDropEffects.None; // Disallow drop
+                    e.Effect = DragDropEffects.None;
                 }
             }
             else
             {
                 e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void listBoxNames_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            foreach (string file in files)
+            {
+                if (file.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
+                {
+                    try
+                    {
+                        string[] lines = File.ReadAllLines(file);
+
+                        foreach (string line in lines)
+                        {
+                            if (!string.IsNullOrWhiteSpace(line))
+                            {
+                                listBoxNames.Items.Add(line.Trim());
+                            }
+                        }
+
+                        MessageBox.Show($"Names from {Path.GetFileName(file)} have been added!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error reading file: {ex.Message}",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }
