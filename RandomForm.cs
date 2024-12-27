@@ -2,32 +2,47 @@ namespace RandomNameSelector
 {
     public partial class RandomForm : Form
     {
+        private const string SessionFilePath = "session.json";
+
         public RandomForm()
         {
             InitializeComponent();
 
+            // Attach events
+            this.FormClosing += RandomNameSelectorForm_FormClosing;
+            this.Load += RandomNameSelectorForm_Load;
             listBoxNames.DragEnter += listBoxNames_DragEnter;
             listBoxNames.DragDrop += listBoxNames_DragDrop;
         }
 
-        private void buttonPickRandom_Click(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e)
         {
+            int numberOfNamesToPick = (int)numericUpDownCount.Value;
+
             if (listBoxNames.Items.Count == 0)
             {
-                MessageBox.Show("No names available to pick!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No names available to pick from!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (numberOfNamesToPick > listBoxNames.Items.Count)
+            {
+                MessageBox.Show($"There are not enough names in the list. Only {listBoxNames.Items.Count} names available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             Random random = new Random();
-            int randomIndex = random.Next(listBoxNames.Items.Count);
+            listBoxSelectedNames.Items.Clear();
 
-            string randomName = listBoxNames.Items[randomIndex].ToString();
+            for (int i = 0; i < numberOfNamesToPick; i++)
+            {
+                int randomIndex = random.Next(listBoxNames.Items.Count);
+                string pickedName = listBoxNames.Items[randomIndex].ToString();
 
-            labelRandomName.Text = randomName;
-
-            // Move the name to "Used Names"
-            listBoxUsedNames.Items.Add(randomName);
-            listBoxNames.Items.RemoveAt(randomIndex);
+                listBoxSelectedNames.Items.Add(pickedName);
+                listBoxUsedNames.Items.Add(pickedName);
+                listBoxNames.Items.RemoveAt(randomIndex);
+            }
         }
 
         private void buttonAddName_Click(object sender, EventArgs e)
@@ -53,31 +68,20 @@ namespace RandomNameSelector
         {
             listBoxNames.Items.Clear();
             listBoxUsedNames.Items.Clear();
-
-            labelRandomName.Text = "Random Name";
-
+            listBoxSelectedNames.Items.Clear();
             textBoxNameInput.Clear();
         }
 
-       
         private void buttonMove_Click(object sender, EventArgs e)
         {
-            if (listBoxUsedNames.Items.Count > 0)
+            foreach (var item in listBoxUsedNames.Items)
             {
-                foreach (var item in listBoxUsedNames.Items)
+                if (!listBoxNames.Items.Contains(item))
                 {
                     listBoxNames.Items.Add(item);
                 }
-
-                listBoxUsedNames.Items.Clear();
             }
-            else
-            {
-                MessageBox.Show("The 'Used Names' list is already empty.",
-                                "No Names to Move",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-            }
+            listBoxUsedNames.Items.Clear();
         }
 
         private void listBoxNames_DragEnter(object sender, DragEventArgs e)
@@ -115,26 +119,91 @@ namespace RandomNameSelector
 
                         foreach (string line in lines)
                         {
-                            if (!string.IsNullOrWhiteSpace(line))
+                            string trimmedLine = line.Trim();
+                            if (!string.IsNullOrWhiteSpace(trimmedLine) && !listBoxNames.Items.Contains(trimmedLine))
                             {
-                                listBoxNames.Items.Add(line.Trim());
+                                listBoxNames.Items.Add(trimmedLine);
                             }
                         }
 
-                        MessageBox.Show($"Names from {Path.GetFileName(file)} have been added!",
-                                        "Success",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
+                        MessageBox.Show($"Names from {Path.GetFileName(file)} have been added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Error reading file: {ex.Message}",
-                                        "Error",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                        MessageBox.Show($"Error reading file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
+        }
+
+        private void SaveSession()
+        {
+            try
+            {
+                var sessionData = new
+                {
+                    Names = listBoxNames.Items.Cast<string>().ToList(),
+                    UsedNames = listBoxUsedNames.Items.Cast<string>().ToList()
+                };
+
+                string json = System.Text.Json.JsonSerializer.Serialize(sessionData, new System.Text.Json.JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
+
+                File.WriteAllText(SessionFilePath, json);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to save session: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadSession()
+        {
+            try
+            {
+                if (File.Exists(SessionFilePath))
+                {
+                    string json = File.ReadAllText(SessionFilePath);
+                    var sessionData = System.Text.Json.JsonSerializer.Deserialize<SessionData>(json);
+
+                    if (sessionData != null)
+                    {
+                        listBoxNames.Items.Clear();
+                        listBoxUsedNames.Items.Clear();
+
+                        foreach (var name in sessionData.Names)
+                        {
+                            listBoxNames.Items.Add(name);
+                        }
+                        foreach (var usedName in sessionData.UsedNames)
+                        {
+                            listBoxUsedNames.Items.Add(usedName);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to load session: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private class SessionData
+        {
+            public List<string> Names { get; set; }
+            public List<string> UsedNames { get; set; }
+        }
+
+        private void RandomNameSelectorForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveSession();
+        }
+
+        private void RandomNameSelectorForm_Load(object sender, EventArgs e)
+        {
+            LoadSession();
         }
     }
 }
