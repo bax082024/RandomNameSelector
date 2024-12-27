@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            buttonMove = new Button();
+            buttonReset = new Button();
+            buttonPickRandom = new Button();
+            label4 = new Label();
+            buttonAddName = new Button();
+            textBoxNameInput = new TextBox();
+            panel2 = new Panel();
+            labelRandomName = new Label();
+            label3 = new Label();
+            lblTitle = new Label();
+            label2 = new Label();
+            label1 = new Label();
             listBoxUsedNames = new ListBox();
             listBoxNames = new ListBox();
-            labelRandomName = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            lblTitle = new Label();
-            label3 = new Label();
-            panel2 = new Panel();
-            textBoxNameInput = new TextBox();
-            buttonAddName = new Button();
-            label4 = new Label();
-            buttonPickRandom = new Button();
-            buttonReset = new Button();
-            buttonMove = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -69,6 +69,136 @@
             panel1.Size = new Size(1074, 721);
             panel1.TabIndex = 0;
             // 
+            // buttonMove
+            // 
+            buttonMove.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonMove.Location = new Point(854, 551);
+            buttonMove.Name = "buttonMove";
+            buttonMove.Size = new Size(113, 38);
+            buttonMove.TabIndex = 13;
+            buttonMove.Text = "<<<   Move";
+            buttonMove.TextAlign = ContentAlignment.MiddleLeft;
+            buttonMove.UseVisualStyleBackColor = true;
+            // 
+            // buttonReset
+            // 
+            buttonReset.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonReset.Location = new Point(395, 571);
+            buttonReset.Name = "buttonReset";
+            buttonReset.Size = new Size(233, 84);
+            buttonReset.TabIndex = 12;
+            buttonReset.Text = "RESET";
+            buttonReset.UseVisualStyleBackColor = true;
+            buttonReset.Click += buttonReset_Click;
+            // 
+            // buttonPickRandom
+            // 
+            buttonPickRandom.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonPickRandom.Location = new Point(395, 462);
+            buttonPickRandom.Name = "buttonPickRandom";
+            buttonPickRandom.Size = new Size(233, 84);
+            buttonPickRandom.TabIndex = 11;
+            buttonPickRandom.Text = "START";
+            buttonPickRandom.UseVisualStyleBackColor = true;
+            buttonPickRandom.Click += buttonPickRandom_Click;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(105, 544);
+            label4.Name = "label4";
+            label4.Size = new Size(91, 17);
+            label4.TabIndex = 10;
+            label4.Text = "Add Name :";
+            // 
+            // buttonAddName
+            // 
+            buttonAddName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonAddName.Location = new Point(105, 605);
+            buttonAddName.Name = "buttonAddName";
+            buttonAddName.Size = new Size(91, 29);
+            buttonAddName.TabIndex = 9;
+            buttonAddName.Text = "Add Name";
+            buttonAddName.UseVisualStyleBackColor = true;
+            buttonAddName.Click += buttonAddName_Click;
+            // 
+            // textBoxNameInput
+            // 
+            textBoxNameInput.BackColor = Color.Silver;
+            textBoxNameInput.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBoxNameInput.Location = new Point(48, 564);
+            textBoxNameInput.Name = "textBoxNameInput";
+            textBoxNameInput.Size = new Size(200, 25);
+            textBoxNameInput.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.BackColor = Color.Silver;
+            panel2.Controls.Add(labelRandomName);
+            panel2.Location = new Point(344, 283);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(337, 100);
+            panel2.TabIndex = 7;
+            // 
+            // labelRandomName
+            // 
+            labelRandomName.Anchor = AnchorStyles.None;
+            labelRandomName.AutoSize = true;
+            labelRandomName.Font = new Font("Stencil", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRandomName.Location = new Point(60, 32);
+            labelRandomName.Name = "labelRandomName";
+            labelRandomName.Size = new Size(227, 34);
+            labelRandomName.TabIndex = 2;
+            labelRandomName.Text = "Random Name";
+            labelRandomName.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.Font = new Font("Showcard Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(332, 189);
+            label3.Name = "label3";
+            label3.Size = new Size(367, 36);
+            label3.TabIndex = 6;
+            label3.Text = "The Choosen Name Is :";
+            // 
+            // lblTitle
+            // 
+            lblTitle.Anchor = AnchorStyles.None;
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Snap ITC", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(88, 22);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(879, 82);
+            lblTitle.TabIndex = 5;
+            lblTitle.Text = "Random Name Selector";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(850, 148);
+            label2.Name = "label2";
+            label2.Size = new Size(117, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Used Names";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(111, 148);
+            label1.Name = "label1";
+            label1.Size = new Size(68, 20);
+            label1.TabIndex = 3;
+            label1.Text = "Names";
+            // 
             // listBoxUsedNames
             // 
             listBoxUsedNames.Anchor = AnchorStyles.None;
@@ -92,137 +222,9 @@
             listBoxNames.Size = new Size(200, 319);
             listBoxNames.TabIndex = 0;
             // 
-            // labelRandomName
-            // 
-            labelRandomName.Anchor = AnchorStyles.None;
-            labelRandomName.AutoSize = true;
-            labelRandomName.Font = new Font("Stencil", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelRandomName.Location = new Point(60, 32);
-            labelRandomName.Name = "labelRandomName";
-            labelRandomName.Size = new Size(227, 34);
-            labelRandomName.TabIndex = 2;
-            labelRandomName.Text = "Random Name";
-            labelRandomName.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(111, 148);
-            label1.Name = "label1";
-            label1.Size = new Size(68, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Names";
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(850, 148);
-            label2.Name = "label2";
-            label2.Size = new Size(117, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Used Names";
-            // 
-            // lblTitle
-            // 
-            lblTitle.Anchor = AnchorStyles.None;
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Snap ITC", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(88, 22);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(879, 82);
-            lblTitle.TabIndex = 5;
-            lblTitle.Text = "Random Name Selector";
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Font = new Font("Showcard Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(332, 189);
-            label3.Name = "label3";
-            label3.Size = new Size(367, 36);
-            label3.TabIndex = 6;
-            label3.Text = "The Choosen Name Is :";
-            // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.None;
-            panel2.BackColor = Color.Silver;
-            panel2.Controls.Add(labelRandomName);
-            panel2.Location = new Point(344, 283);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(337, 100);
-            panel2.TabIndex = 7;
-            // 
-            // textBoxNameInput
-            // 
-            textBoxNameInput.BackColor = Color.Silver;
-            textBoxNameInput.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBoxNameInput.Location = new Point(48, 564);
-            textBoxNameInput.Name = "textBoxNameInput";
-            textBoxNameInput.Size = new Size(200, 25);
-            textBoxNameInput.TabIndex = 8;
-            // 
-            // buttonAddName
-            // 
-            buttonAddName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonAddName.Location = new Point(105, 605);
-            buttonAddName.Name = "buttonAddName";
-            buttonAddName.Size = new Size(91, 29);
-            buttonAddName.TabIndex = 9;
-            buttonAddName.Text = "Add Name";
-            buttonAddName.UseVisualStyleBackColor = true;
-            buttonAddName.Click += buttonAddName_Click;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(105, 544);
-            label4.Name = "label4";
-            label4.Size = new Size(91, 17);
-            label4.TabIndex = 10;
-            label4.Text = "Add Name :";
-            // 
-            // buttonPickRandom
-            // 
-            buttonPickRandom.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonPickRandom.Location = new Point(395, 462);
-            buttonPickRandom.Name = "buttonPickRandom";
-            buttonPickRandom.Size = new Size(233, 84);
-            buttonPickRandom.TabIndex = 11;
-            buttonPickRandom.Text = "START";
-            buttonPickRandom.UseVisualStyleBackColor = true;
-            buttonPickRandom.Click += buttonPickRandom_Click;
-            // 
-            // buttonReset
-            // 
-            buttonReset.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonReset.Location = new Point(395, 571);
-            buttonReset.Name = "buttonReset";
-            buttonReset.Size = new Size(233, 84);
-            buttonReset.TabIndex = 12;
-            buttonReset.Text = "RESET";
-            buttonReset.UseVisualStyleBackColor = true;
-            // 
-            // buttonMove
-            // 
-            buttonMove.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonMove.Location = new Point(854, 551);
-            buttonMove.Name = "buttonMove";
-            buttonMove.Size = new Size(113, 38);
-            buttonMove.TabIndex = 13;
-            buttonMove.Text = "<<<   Move";
-            buttonMove.TextAlign = ContentAlignment.MiddleLeft;
-            buttonMove.UseVisualStyleBackColor = true;
-            // 
             // RandomForm
             // 
+            AcceptButton = buttonAddName;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateGray;

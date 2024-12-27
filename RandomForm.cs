@@ -45,5 +45,15 @@ namespace RandomNameSelector
             listBoxNames.Items.Add(newName);
             textBoxNameInput.Clear();
         }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            listBoxNames.Items.Clear();
+            listBoxUsedNames.Items.Clear();
+
+            labelRandomName.Text = "Random Name";
+
+            textBoxNameInput.Clear();
+        }
     }
 }
