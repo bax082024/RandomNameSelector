@@ -13,6 +13,9 @@ namespace RandomNameSelector
             this.Load += RandomNameSelectorForm_Load;
             listBoxNames.DragEnter += listBoxNames_DragEnter;
             listBoxNames.DragDrop += listBoxNames_DragDrop;
+
+            this.Paint += RandomForm_Paint;
+            this.BackColor = Color.White;
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -206,17 +209,7 @@ namespace RandomNameSelector
             LoadSession();
         }
 
-        public RandomForm()
-        {
-            InitializeComponent();
-
-            this.FormClosing += RandomNameSelectorForm_FormClosing;
-            this.Load += RandomNameSelectorForm_Load;
-
-            this.Paint += RandomForm_Paint;
-
-            LoadSession();
-        }
+        
 
         private void RandomForm_Paint(object sender, PaintEventArgs e)
         {

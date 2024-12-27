@@ -146,6 +146,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.DarkOliveGreen;
             label4.Location = new Point(105, 544);
             label4.Name = "label4";
             label4.Size = new Size(91, 17);
@@ -177,6 +178,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Showcard Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Green;
             label3.Location = new Point(332, 189);
             label3.Name = "label3";
             label3.Size = new Size(367, 36);
@@ -200,6 +202,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.DarkOliveGreen;
             label2.Location = new Point(850, 179);
             label2.Name = "label2";
             label2.Size = new Size(117, 20);
@@ -211,6 +214,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.DarkOliveGreen;
             label1.Location = new Point(114, 179);
             label1.Name = "label1";
             label1.Size = new Size(68, 20);
