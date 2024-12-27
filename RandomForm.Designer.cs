@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label5 = new Label();
             listBoxSelectedNames = new ListBox();
             numericUpDownCount = new NumericUpDown();
             panel3 = new Panel();
@@ -52,6 +53,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(listBoxSelectedNames);
             panel1.Controls.Add(numericUpDownCount);
             panel1.Controls.Add(panel3);
@@ -70,6 +72,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1074, 721);
             panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.DarkOliveGreen;
+            label5.Location = new Point(332, 662);
+            label5.Name = "label5";
+            label5.Size = new Size(172, 34);
+            label5.TabIndex = 18;
+            label5.Text = "How many names to pick :\r\n        (between 1 - 10)";
             // 
             // listBoxSelectedNames
             // 
@@ -279,5 +292,6 @@
         private Panel panel3;
         private NumericUpDown numericUpDownCount;
         private ListBox listBoxSelectedNames;
+        private Label label5;
     }
 }
