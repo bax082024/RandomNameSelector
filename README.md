@@ -51,7 +51,7 @@ save sessions, and even drag and drop text files with names.
 
 ## Screenshot
 
-<img src="Images/program.png" alt="1" width="600">
+<img src="Images/program.png" alt="1" width="800">
 
 ---
 
