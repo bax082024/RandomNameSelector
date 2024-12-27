@@ -30,15 +30,15 @@
         {
             panel1 = new Panel();
             listBox2 = new ListBox();
-            listBox1 = new ListBox();
+            listBoxNames = new ListBox();
             btnSelectedName = new Label();
             label1 = new Label();
             label2 = new Label();
             lblTitle = new Label();
             label3 = new Label();
             panel2 = new Panel();
-            textBox1 = new TextBox();
-            btnAddName = new Button();
+            textBoxNameInput = new TextBox();
+            buttonAddName = new Button();
             label4 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -48,15 +48,15 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(btnAddName);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(buttonAddName);
+            panel1.Controls.Add(textBoxNameInput);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(listBox2);
-            panel1.Controls.Add(listBox1);
+            panel1.Controls.Add(listBoxNames);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -74,16 +74,17 @@
             listBox2.Size = new Size(200, 319);
             listBox2.TabIndex = 1;
             // 
-            // listBox1
+            // listBoxNames
             // 
-            listBox1.Anchor = AnchorStyles.None;
-            listBox1.BackColor = SystemColors.Info;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(48, 213);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(200, 319);
-            listBox1.TabIndex = 0;
+            listBoxNames.AllowDrop = true;
+            listBoxNames.Anchor = AnchorStyles.None;
+            listBoxNames.BackColor = SystemColors.Info;
+            listBoxNames.FormattingEnabled = true;
+            listBoxNames.ItemHeight = 15;
+            listBoxNames.Location = new Point(48, 213);
+            listBoxNames.Name = "listBoxNames";
+            listBoxNames.Size = new Size(200, 319);
+            listBoxNames.TabIndex = 0;
             // 
             // btnSelectedName
             // 
@@ -151,24 +152,24 @@
             panel2.Size = new Size(337, 100);
             panel2.TabIndex = 7;
             // 
-            // textBox1
+            // textBoxNameInput
             // 
-            textBox1.BackColor = Color.Silver;
-            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(48, 564);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(200, 25);
-            textBox1.TabIndex = 8;
+            textBoxNameInput.BackColor = Color.Silver;
+            textBoxNameInput.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBoxNameInput.Location = new Point(48, 564);
+            textBoxNameInput.Name = "textBoxNameInput";
+            textBoxNameInput.Size = new Size(200, 25);
+            textBoxNameInput.TabIndex = 8;
             // 
-            // btnAddName
+            // buttonAddName
             // 
-            btnAddName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddName.Location = new Point(105, 605);
-            btnAddName.Name = "btnAddName";
-            btnAddName.Size = new Size(91, 29);
-            btnAddName.TabIndex = 9;
-            btnAddName.Text = "Add Name";
-            btnAddName.UseVisualStyleBackColor = true;
+            buttonAddName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonAddName.Location = new Point(105, 605);
+            buttonAddName.Name = "buttonAddName";
+            buttonAddName.Size = new Size(91, 29);
+            buttonAddName.TabIndex = 9;
+            buttonAddName.Text = "Add Name";
+            buttonAddName.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -201,15 +202,15 @@
 
         private Panel panel1;
         private ListBox listBox2;
-        private ListBox listBox1;
+        private ListBox listBoxNames;
         private Label btnSelectedName;
         private Label lblTitle;
         private Label label2;
         private Label label1;
         private Label label3;
         private Panel panel2;
-        private Button btnAddName;
-        private TextBox textBox1;
+        private Button buttonAddName;
+        private TextBox textBoxNameInput;
         private Label label4;
     }
 }
