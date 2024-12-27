@@ -35,12 +35,14 @@
             label1 = new Label();
             label2 = new Label();
             lblTitle = new Label();
+            label3 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -78,7 +80,7 @@
             btnSelectedName.Anchor = AnchorStyles.None;
             btnSelectedName.AutoSize = true;
             btnSelectedName.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSelectedName.Location = new Point(420, 327);
+            btnSelectedName.Location = new Point(430, 448);
             btnSelectedName.Name = "btnSelectedName";
             btnSelectedName.Size = new Size(115, 32);
             btnSelectedName.TabIndex = 2;
@@ -117,6 +119,17 @@
             lblTitle.TabIndex = 5;
             lblTitle.Text = "Random Name Selector";
             // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.Font = new Font("Showcard Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(344, 199);
+            label3.Name = "label3";
+            label3.Size = new Size(337, 33);
+            label3.TabIndex = 6;
+            label3.Text = "The Choosen Name Is :";
+            // 
             // RandomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -140,5 +153,6 @@
         private Label lblTitle;
         private Label label2;
         private Label label1;
+        private Label label3;
     }
 }
