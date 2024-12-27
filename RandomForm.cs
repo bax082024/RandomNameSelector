@@ -194,6 +194,14 @@ namespace RandomNameSelector
             }
         }
 
+        private class SessionData
+        {
+            public List<string> Names { get; set; }
+            public List<string> UsedNames { get; set; }
+        }
+
+
+
 
 
     }
