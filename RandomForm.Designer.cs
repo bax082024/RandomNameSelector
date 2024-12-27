@@ -38,7 +38,8 @@
             label3 = new Label();
             panel2 = new Panel();
             textBox1 = new TextBox();
-            button1 = new Button();
+            btnAddName = new Button();
+            label4 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -46,7 +47,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(btnAddName);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label3);
@@ -153,19 +155,31 @@
             // 
             textBox1.BackColor = Color.Silver;
             textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(48, 557);
+            textBox1.Location = new Point(48, 564);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(200, 25);
             textBox1.TabIndex = 8;
             // 
-            // button1
+            // btnAddName
             // 
-            button1.Location = new Point(93, 599);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 42);
-            button1.TabIndex = 9;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnAddName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddName.Location = new Point(105, 605);
+            btnAddName.Name = "btnAddName";
+            btnAddName.Size = new Size(91, 29);
+            btnAddName.TabIndex = 9;
+            btnAddName.Text = "Add Name";
+            btnAddName.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(105, 544);
+            label4.Name = "label4";
+            label4.Size = new Size(91, 17);
+            label4.TabIndex = 10;
+            label4.Text = "Add Name :";
             // 
             // RandomForm
             // 
@@ -194,7 +208,8 @@
         private Label label1;
         private Label label3;
         private Panel panel2;
-        private Button button1;
+        private Button btnAddName;
         private TextBox textBox1;
+        private Label label4;
     }
 }
