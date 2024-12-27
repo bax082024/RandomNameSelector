@@ -9,8 +9,13 @@ namespace RandomNameSelector
         {
             InitializeComponent();
 
+            LoadSession();
+
             listBoxNames.DragEnter += listBoxNames_DragEnter;
             listBoxNames.DragDrop += listBoxNames_DragDrop;
+
+            this.FormClosing += RandomNameSelectorForm_FormClosing;
+            this.Load += RandomNameSelectorForm_Load;
         }
 
         private void buttonPickRandom_Click(object sender, EventArgs e)
@@ -205,6 +210,10 @@ namespace RandomNameSelector
             SaveSession();
         }
 
+        private void RandomNameSelectorForm_Load(object sender, EventArgs e)
+        {
+            LoadSession(); // Call the LoadSession method to load the previous session
+        }
 
 
 
