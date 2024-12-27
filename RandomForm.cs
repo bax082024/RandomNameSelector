@@ -2,6 +2,9 @@ namespace RandomNameSelector
 {
     public partial class RandomForm : Form
     {
+        private const string SessionFilePath = "session.json";
+
+
         public RandomForm()
         {
             InitializeComponent();
@@ -136,5 +139,31 @@ namespace RandomNameSelector
                 }
             }
         }
+
+        private void SaveSession()
+        {
+            try
+            {
+                var sessionData = new
+                {
+                    Names = listBoxNames.Items.Cast<string>().ToList(),
+                    UsedNames = listBoxUsedNames.Items.Cast<string>().ToList()
+                };
+
+                string json = System.Text.Json.JsonSerializer.Serialize(sessionData, new System.Text.Json.JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
+
+                File.WriteAllText(SessionFilePath, json);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to save session: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
     }
 }
