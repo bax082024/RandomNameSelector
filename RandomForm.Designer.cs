@@ -36,17 +36,19 @@
             label2 = new Label();
             lblTitle = new Label();
             label3 = new Label();
+            panel2 = new Panel();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(btnSelectedName);
             panel1.Controls.Add(listBox2);
             panel1.Controls.Add(listBox1);
             panel1.Dock = DockStyle.Fill;
@@ -80,11 +82,12 @@
             btnSelectedName.Anchor = AnchorStyles.None;
             btnSelectedName.AutoSize = true;
             btnSelectedName.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSelectedName.Location = new Point(430, 448);
+            btnSelectedName.Location = new Point(91, 32);
             btnSelectedName.Name = "btnSelectedName";
-            btnSelectedName.Size = new Size(115, 32);
+            btnSelectedName.Size = new Size(44, 32);
             btnSelectedName.TabIndex = 2;
-            btnSelectedName.Text = "label1";
+            btnSelectedName.Text = "``";
+            btnSelectedName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -130,6 +133,16 @@
             label3.TabIndex = 6;
             label3.Text = "The Choosen Name Is :";
             // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.BackColor = Color.Silver;
+            panel2.Controls.Add(btnSelectedName);
+            panel2.Location = new Point(344, 283);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(337, 100);
+            panel2.TabIndex = 7;
+            // 
             // RandomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -141,6 +154,8 @@
             Text = "Random Name Selector";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -154,5 +169,6 @@
         private Label label2;
         private Label label1;
         private Label label3;
+        private Panel panel2;
     }
 }
