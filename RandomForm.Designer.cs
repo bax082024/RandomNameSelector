@@ -88,21 +88,23 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(79, 165);
+            label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(93, 148);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(109, 20);
             label1.TabIndex = 3;
-            label1.Text = "label1";
+            label1.Text = "Add Names";
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(868, 178);
+            label2.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(850, 148);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(117, 20);
             label2.TabIndex = 4;
-            label2.Text = "label2";
+            label2.Text = "Used Names";
             // 
             // lblTitle
             // 
