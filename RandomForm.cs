@@ -8,7 +8,6 @@ namespace RandomNameSelector
         {
             InitializeComponent();
 
-            // Attach events
             this.FormClosing += RandomNameSelectorForm_FormClosing;
             this.Load += RandomNameSelectorForm_Load;
             listBoxNames.DragEnter += listBoxNames_DragEnter;
