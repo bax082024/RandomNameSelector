@@ -19,9 +19,19 @@ save sessions, and even drag and drop text files with names.
 ---
 
 ## Prerequisites
-- Windows OS (with .NET 8 installed)
-- Visual Studio (for building or editing the source code)
+- **Windows OS** (with .NET 8 installed)
+- **Visual Studio** (for building or editing the source code)
 
 ---
+
+## Installation
+
+1. **Clone Repository:**
+	- **https://github.com/bax082024/RandomNameSelector.git**
+2. Open the project in **Visual Studio**.
+3. **Rebuild** Project.
+
+---
+
 
 
