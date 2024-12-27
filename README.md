@@ -47,5 +47,28 @@ save sessions, and even drag and drop text files with names.
 4. **Reset:**
 	- Click **Reset** to clear all names and start fresh.
 
+---
+
+## Screenshot
+
+<img src="Images/program.png" alt="1" width="800">
+
+---
+
+## Customization
+1. **Gradient Background**
+	- Update the gradient colors or styles in the Paint event.
+2. **Session File:**
+	- The session is saved in **session.json**. You can edit this file to preload names.
+
+---
+
+## Contact
+
+- For questions or feedback, please contact:
+	- **bax082024@gmail.com**
+
+
+---
 
 
