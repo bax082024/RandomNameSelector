@@ -15,6 +15,13 @@ namespace RandomNameSelector
                 MessageBox.Show("No names available to pick!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            // Generate a random index
+            Random random = new Random();
+            int randomIndex = random.Next(listBoxNames.Items.Count);
+
+            // Get the random name
+            string randomName = listBoxNames.Items[randomIndex].ToString();
         }
 
         private void buttonAddName_Click(object sender, EventArgs e)
