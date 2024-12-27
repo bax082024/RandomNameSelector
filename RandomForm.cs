@@ -9,13 +9,15 @@ namespace RandomNameSelector
         {
             InitializeComponent();
 
+            this.FormClosing += RandomNameSelectorForm_FormClosing;
+            this.Load += RandomNameSelectorForm_Load;
+
             LoadSession();
 
             listBoxNames.DragEnter += listBoxNames_DragEnter;
             listBoxNames.DragDrop += listBoxNames_DragDrop;
 
-            this.FormClosing += RandomNameSelectorForm_FormClosing;
-            this.Load += RandomNameSelectorForm_Load;
+            
         }
 
         private void buttonPickRandom_Click(object sender, EventArgs e)
