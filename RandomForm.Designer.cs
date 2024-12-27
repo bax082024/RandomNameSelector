@@ -79,6 +79,7 @@
             buttonMove.Text = "<<<   Move";
             buttonMove.TextAlign = ContentAlignment.MiddleLeft;
             buttonMove.UseVisualStyleBackColor = true;
+            buttonMove.Click += buttonMove_Click;
             // 
             // buttonReset
             // 

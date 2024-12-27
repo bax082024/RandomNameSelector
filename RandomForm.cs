@@ -55,5 +55,31 @@ namespace RandomNameSelector
 
             textBoxNameInput.Clear();
         }
+
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            // Check if the Used Names list has any items
+            if (listBoxUsedNames.Items.Count > 0)
+            {
+                // Loop through all items in the Used Names list
+                foreach (var item in listBoxUsedNames.Items)
+                {
+                    // Add each item back to the Names list
+                    listBoxNames.Items.Add(item);
+                }
+
+                // Clear the Used Names list after moving all names
+                listBoxUsedNames.Items.Clear();
+            }
+            else
+            {
+                // Show a message if the Used Names list is already empty
+                MessageBox.Show("The 'Used Names' list is already empty.",
+                                "No Names to Move",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+        }
+
     }
 }
