@@ -9,14 +9,18 @@ namespace RandomNameSelector
 
         private void buttonPickRandom_Click(object sender, EventArgs e)
         {
-
+            // Check if there are names in the list
+            if (listBoxNames.Items.Count == 0)
+            {
+                MessageBox.Show("No names available to pick!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void buttonAddName_Click(object sender, EventArgs e)
         {
             string newName = textBoxNameInput.Text.Trim();
 
-            // Check for empty input or duplicate names
             if (string.IsNullOrEmpty(newName))
             {
                 MessageBox.Show("Name cannot be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -28,7 +32,6 @@ namespace RandomNameSelector
                 return;
             }
 
-            // Add name to the list
             listBoxNames.Items.Add(newName);
             textBoxNameInput.Clear();
         }

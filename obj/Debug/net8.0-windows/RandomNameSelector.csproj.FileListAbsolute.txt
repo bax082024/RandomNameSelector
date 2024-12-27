@@ -1,0 +1,17 @@
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\bin\Debug\net8.0-windows\RandomNameSelector.exe
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\bin\Debug\net8.0-windows\RandomNameSelector.deps.json
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\bin\Debug\net8.0-windows\RandomNameSelector.runtimeconfig.json
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\bin\Debug\net8.0-windows\RandomNameSelector.dll
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\bin\Debug\net8.0-windows\RandomNameSelector.pdb
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.RandomForm.resources
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.csproj.GenerateResource.cache
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.GeneratedMSBuildEditorConfig.editorconfig
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.AssemblyInfoInputs.cache
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.AssemblyInfo.cs
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.csproj.CoreCompileInputs.cache
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.sourcelink.json
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.dll
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\refint\RandomNameSelector.dll
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.pdb
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\RandomNameSelector.genruntimeconfig.cache
+C:\HjemmeKode\C-Sharp\MyProjects\RandomNameSelector\obj\Debug\net8.0-windows\ref\RandomNameSelector.dll
