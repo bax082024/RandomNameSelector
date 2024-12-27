@@ -35,7 +35,6 @@ namespace RandomNameSelector
 
             labelRandomName.Text = randomName;
 
-            // Move the name to "Used Names"
             listBoxUsedNames.Items.Add(randomName);
             listBoxNames.Items.RemoveAt(randomIndex);
         }
@@ -214,7 +213,7 @@ namespace RandomNameSelector
 
         private void RandomNameSelectorForm_Load(object sender, EventArgs e)
         {
-            LoadSession(); // Call the LoadSession method to load the previous session
+            LoadSession();
         }
 
 

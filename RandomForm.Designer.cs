@@ -31,7 +31,6 @@
             panel1 = new Panel();
             panel3 = new Panel();
             buttonPickRandom = new Button();
-            btnSettings = new Button();
             buttonReset = new Button();
             buttonMove = new Button();
             label4 = new Label();
@@ -45,14 +44,17 @@
             label1 = new Label();
             listBoxUsedNames = new ListBox();
             listBoxNames = new ListBox();
+            numericUpDown1 = new NumericUpDown();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(numericUpDown1);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(buttonMove);
             panel1.Controls.Add(label4);
@@ -75,11 +77,10 @@
             // 
             panel3.Anchor = AnchorStyles.None;
             panel3.Controls.Add(buttonPickRandom);
-            panel3.Controls.Add(btnSettings);
             panel3.Controls.Add(buttonReset);
             panel3.Location = new Point(388, 405);
             panel3.Name = "panel3";
-            panel3.Size = new Size(243, 251);
+            panel3.Size = new Size(243, 156);
             panel3.TabIndex = 15;
             // 
             // buttonPickRandom
@@ -94,22 +95,11 @@
             buttonPickRandom.UseVisualStyleBackColor = true;
             buttonPickRandom.Click += buttonPickRandom_Click;
             // 
-            // btnSettings
-            // 
-            btnSettings.Anchor = AnchorStyles.None;
-            btnSettings.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSettings.Location = new Point(3, 87);
-            btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(230, 70);
-            btnSettings.TabIndex = 14;
-            btnSettings.Text = "SETTINGS";
-            btnSettings.UseVisualStyleBackColor = true;
-            // 
             // buttonReset
             // 
             buttonReset.Anchor = AnchorStyles.None;
             buttonReset.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonReset.Location = new Point(0, 173);
+            buttonReset.Location = new Point(3, 86);
             buttonReset.Name = "buttonReset";
             buttonReset.Size = new Size(230, 70);
             buttonReset.TabIndex = 12;
@@ -250,6 +240,16 @@
             listBoxNames.Size = new Size(200, 319);
             listBoxNames.TabIndex = 0;
             // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(511, 656);
+            numericUpDown1.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(120, 23);
+            numericUpDown1.TabIndex = 16;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
             // RandomForm
             // 
             AcceptButton = buttonAddName;
@@ -265,6 +265,7 @@
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
@@ -286,6 +287,6 @@
         private Button buttonPickRandom;
         private Button buttonMove;
         private Panel panel3;
-        private Button btnSettings;
+        private NumericUpDown numericUpDown1;
     }
 }
