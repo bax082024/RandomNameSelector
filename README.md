@@ -47,5 +47,11 @@ save sessions, and even drag and drop text files with names.
 4. **Reset:**
 	- Click **Reset** to clear all names and start fresh.
 
+---
+
+## Screenshot
+
+<img src="Images/program.png" alt="1" width="400">
+
 
 
