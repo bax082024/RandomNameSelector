@@ -163,6 +163,37 @@ namespace RandomNameSelector
             }
         }
 
+        private void LoadSession()
+        {
+            try
+            {
+                if (File.Exists(SessionFilePath))
+                {
+                    string json = File.ReadAllText(SessionFilePath);
+                    var sessionData = System.Text.Json.JsonSerializer.Deserialize<SessionData>(json);
+
+                    if (sessionData != null)
+                    {
+                        listBoxNames.Items.Clear();
+                        foreach (var name in sessionData.Names)
+                        {
+                            listBoxNames.Items.Add(name);
+                        }
+
+                        listBoxUsedNames.Items.Clear();
+                        foreach (var usedName in sessionData.UsedNames)
+                        {
+                            listBoxUsedNames.Items.Add(usedName);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to load session: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
 
     }
