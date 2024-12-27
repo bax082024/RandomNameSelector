@@ -51,7 +51,14 @@ save sessions, and even drag and drop text files with names.
 
 ## Screenshot
 
-<img src="Images/program.png" alt="1" width="400">
+<img src="Images/program.png" alt="1" width="600">
 
+---
+
+## Customization
+1. **Gradient Background**
+	- Update the gradient colors or styles in the Paint event.
+2. **Session File:**
+	- The session is saved in **session.json**. You can edit this file to preload names.
 
 
