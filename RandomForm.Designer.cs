@@ -176,6 +176,7 @@
             buttonAddName.TabIndex = 9;
             buttonAddName.Text = "Add Name";
             buttonAddName.UseVisualStyleBackColor = true;
+            buttonAddName.Click += buttonAddName_Click;
             // 
             // label4
             // 
@@ -197,6 +198,7 @@
             buttonPickRandom.TabIndex = 11;
             buttonPickRandom.Text = "START";
             buttonPickRandom.UseVisualStyleBackColor = true;
+            buttonPickRandom.Click += buttonPickRandom_Click;
             // 
             // buttonReset
             // 
