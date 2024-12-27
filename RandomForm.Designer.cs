@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            listBox2 = new ListBox();
+            listBoxUsedNames = new ListBox();
             listBoxNames = new ListBox();
-            btnSelectedName = new Label();
+            labelRandomName = new Label();
             label1 = new Label();
             label2 = new Label();
             lblTitle = new Label();
@@ -40,6 +40,8 @@
             textBoxNameInput = new TextBox();
             buttonAddName = new Button();
             label4 = new Label();
+            buttonPickRandom = new Button();
+            buttonReset = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -47,6 +49,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(buttonReset);
+            panel1.Controls.Add(buttonPickRandom);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(buttonAddName);
             panel1.Controls.Add(textBoxNameInput);
@@ -55,7 +59,7 @@
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(listBox2);
+            panel1.Controls.Add(listBoxUsedNames);
             panel1.Controls.Add(listBoxNames);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -63,16 +67,16 @@
             panel1.Size = new Size(1074, 721);
             panel1.TabIndex = 0;
             // 
-            // listBox2
+            // listBoxUsedNames
             // 
-            listBox2.Anchor = AnchorStyles.None;
-            listBox2.BackColor = SystemColors.Info;
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(808, 213);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(200, 319);
-            listBox2.TabIndex = 1;
+            listBoxUsedNames.Anchor = AnchorStyles.None;
+            listBoxUsedNames.BackColor = SystemColors.Info;
+            listBoxUsedNames.FormattingEnabled = true;
+            listBoxUsedNames.ItemHeight = 15;
+            listBoxUsedNames.Location = new Point(808, 213);
+            listBoxUsedNames.Name = "listBoxUsedNames";
+            listBoxUsedNames.Size = new Size(200, 319);
+            listBoxUsedNames.TabIndex = 1;
             // 
             // listBoxNames
             // 
@@ -86,17 +90,17 @@
             listBoxNames.Size = new Size(200, 319);
             listBoxNames.TabIndex = 0;
             // 
-            // btnSelectedName
+            // labelRandomName
             // 
-            btnSelectedName.Anchor = AnchorStyles.None;
-            btnSelectedName.AutoSize = true;
-            btnSelectedName.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSelectedName.Location = new Point(91, 32);
-            btnSelectedName.Name = "btnSelectedName";
-            btnSelectedName.Size = new Size(44, 32);
-            btnSelectedName.TabIndex = 2;
-            btnSelectedName.Text = "``";
-            btnSelectedName.TextAlign = ContentAlignment.MiddleCenter;
+            labelRandomName.Anchor = AnchorStyles.None;
+            labelRandomName.AutoSize = true;
+            labelRandomName.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRandomName.Location = new Point(60, 32);
+            labelRandomName.Name = "labelRandomName";
+            labelRandomName.Size = new Size(214, 32);
+            labelRandomName.TabIndex = 2;
+            labelRandomName.Text = "Random Name";
+            labelRandomName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -146,7 +150,7 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.Silver;
-            panel2.Controls.Add(btnSelectedName);
+            panel2.Controls.Add(labelRandomName);
             panel2.Location = new Point(344, 283);
             panel2.Name = "panel2";
             panel2.Size = new Size(337, 100);
@@ -182,6 +186,26 @@
             label4.TabIndex = 10;
             label4.Text = "Add Name :";
             // 
+            // buttonPickRandom
+            // 
+            buttonPickRandom.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonPickRandom.Location = new Point(395, 462);
+            buttonPickRandom.Name = "buttonPickRandom";
+            buttonPickRandom.Size = new Size(233, 84);
+            buttonPickRandom.TabIndex = 11;
+            buttonPickRandom.Text = "START";
+            buttonPickRandom.UseVisualStyleBackColor = true;
+            // 
+            // buttonReset
+            // 
+            buttonReset.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonReset.Location = new Point(395, 571);
+            buttonReset.Name = "buttonReset";
+            buttonReset.Size = new Size(233, 84);
+            buttonReset.TabIndex = 12;
+            buttonReset.Text = "RESET";
+            buttonReset.UseVisualStyleBackColor = true;
+            // 
             // RandomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -201,9 +225,9 @@
         #endregion
 
         private Panel panel1;
-        private ListBox listBox2;
+        private ListBox listBoxUsedNames;
         private ListBox listBoxNames;
-        private Label btnSelectedName;
+        private Label labelRandomName;
         private Label lblTitle;
         private Label label2;
         private Label label1;
@@ -212,5 +236,7 @@
         private Button buttonAddName;
         private TextBox textBoxNameInput;
         private Label label4;
+        private Button buttonReset;
+        private Button buttonPickRandom;
     }
 }
