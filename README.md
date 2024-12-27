@@ -17,3 +17,11 @@ save sessions, and even drag and drop text files with names.
 - **Multi-Name Picker:** Select multiple names at once with the numeric input control.
 
 ---
+
+## Prerequisites
+- Windows OS (with .NET 8 installed)
+- Visual Studio (for building or editing the source code)
+
+---
+
+
