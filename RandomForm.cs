@@ -5,6 +5,9 @@ namespace RandomNameSelector
         public RandomForm()
         {
             InitializeComponent();
+
+            listBoxNames.DragEnter += listBoxNames_DragEnter;
+            listBoxNames.DragDrop += listBoxNames_DragDrop;
         }
 
         private void buttonPickRandom_Click(object sender, EventArgs e)
