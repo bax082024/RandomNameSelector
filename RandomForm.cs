@@ -13,6 +13,9 @@ namespace RandomNameSelector
             this.Load += RandomNameSelectorForm_Load;
             listBoxNames.DragEnter += listBoxNames_DragEnter;
             listBoxNames.DragDrop += listBoxNames_DragDrop;
+
+            this.Paint += RandomForm_Paint;
+            this.BackColor = Color.White;
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -205,5 +208,24 @@ namespace RandomNameSelector
         {
             LoadSession();
         }
+
+        
+
+        private void RandomForm_Paint(object sender, PaintEventArgs e)
+        {
+            Color startColor = Color.LightBlue;
+            Color endColor = Color.DarkBlue;
+
+            using (var gradientBrush = new System.Drawing.Drawing2D.LinearGradientBrush(
+                this.ClientRectangle,
+                startColor, 
+                endColor, 
+                System.Drawing.Drawing2D.LinearGradientMode.Vertical 
+            ))
+            {
+                e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+            }
+        }
+
     }
 }
