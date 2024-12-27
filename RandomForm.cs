@@ -22,21 +22,37 @@ namespace RandomNameSelector
 
         private void buttonPickRandom_Click(object sender, EventArgs e)
         {
+            int numberOfNamesToPick = (int)numericUpDownCount.Value;
+
             if (listBoxNames.Items.Count == 0)
             {
-                MessageBox.Show("No names available to pick!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No names available to pick from!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (numberOfNamesToPick > listBoxNames.Items.Count)
+            {
+                MessageBox.Show($"There are not enough names in the list. Only {listBoxNames.Items.Count} names available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             Random random = new Random();
-            int randomIndex = random.Next(listBoxNames.Items.Count);
+            List<string> pickedNames = new List<string>();
 
-            string randomName = listBoxNames.Items[randomIndex].ToString();
+            for (int i = 0; i < numberOfNamesToPick; i++)
+            {
+                int randomIndex = random.Next(listBoxNames.Items.Count);
+                string pickedName = listBoxNames.Items[randomIndex].ToString();
 
-            labelRandomName.Text = randomName;
+                pickedNames.Add(pickedName);
 
-            listBoxUsedNames.Items.Add(randomName);
-            listBoxNames.Items.RemoveAt(randomIndex);
+                // Move the picked name to the Used Names list
+                listBoxUsedNames.Items.Add(pickedName);
+                listBoxNames.Items.RemoveAt(randomIndex);
+            }
+
+            // Display the picked names in the label or another control
+            labelRandomName.Text = string.Join(", ", pickedNames);
         }
 
         private void buttonAddName_Click(object sender, EventArgs e)

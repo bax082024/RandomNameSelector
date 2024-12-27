@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            numericUpDownCount = new NumericUpDown();
             panel3 = new Panel();
             buttonPickRandom = new Button();
             buttonReset = new Button();
@@ -44,17 +45,16 @@
             label1 = new Label();
             listBoxUsedNames = new ListBox();
             listBoxNames = new ListBox();
-            numericUpDown1 = new NumericUpDown();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownCount).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(numericUpDown1);
+            panel1.Controls.Add(numericUpDownCount);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(buttonMove);
             panel1.Controls.Add(label4);
@@ -72,6 +72,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1074, 721);
             panel1.TabIndex = 0;
+            // 
+            // numericUpDownCount
+            // 
+            numericUpDownCount.Location = new Point(511, 656);
+            numericUpDownCount.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDownCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDownCount.Name = "numericUpDownCount";
+            numericUpDownCount.Size = new Size(120, 23);
+            numericUpDownCount.TabIndex = 16;
+            numericUpDownCount.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // panel3
             // 
@@ -240,16 +250,6 @@
             listBoxNames.Size = new Size(200, 319);
             listBoxNames.TabIndex = 0;
             // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(511, 656);
-            numericUpDown1.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 16;
-            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
             // RandomForm
             // 
             AcceptButton = buttonAddName;
@@ -262,10 +262,10 @@
             Text = "Random Name Selector";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownCount).EndInit();
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
@@ -287,6 +287,6 @@
         private Button buttonPickRandom;
         private Button buttonMove;
         private Panel panel3;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDownCount;
     }
 }
