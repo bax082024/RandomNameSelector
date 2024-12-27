@@ -9,19 +9,22 @@ namespace RandomNameSelector
 
         private void buttonPickRandom_Click(object sender, EventArgs e)
         {
-            // Check if there are names in the list
             if (listBoxNames.Items.Count == 0)
             {
                 MessageBox.Show("No names available to pick!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Generate a random index
             Random random = new Random();
             int randomIndex = random.Next(listBoxNames.Items.Count);
 
-            // Get the random name
             string randomName = listBoxNames.Items[randomIndex].ToString();
+
+            labelRandomName.Text = randomName;
+
+            // Move the name to "Used Names"
+            listBoxUsedNames.Items.Add(randomName);
+            listBoxNames.Items.RemoveAt(randomIndex);
         }
 
         private void buttonAddName_Click(object sender, EventArgs e)
