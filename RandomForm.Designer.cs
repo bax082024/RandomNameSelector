@@ -37,6 +37,8 @@
             lblTitle = new Label();
             label3 = new Label();
             panel2 = new Panel();
+            textBox1 = new TextBox();
+            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -44,6 +46,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(textBox1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(lblTitle);
@@ -60,6 +64,7 @@
             // listBox2
             // 
             listBox2.Anchor = AnchorStyles.None;
+            listBox2.BackColor = SystemColors.Info;
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
             listBox2.Location = new Point(808, 213);
@@ -70,6 +75,7 @@
             // listBox1
             // 
             listBox1.Anchor = AnchorStyles.None;
+            listBox1.BackColor = SystemColors.Info;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
             listBox1.Location = new Point(48, 213);
@@ -94,11 +100,11 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(93, 148);
+            label1.Location = new Point(111, 148);
             label1.Name = "label1";
-            label1.Size = new Size(109, 20);
+            label1.Size = new Size(68, 20);
             label1.TabIndex = 3;
-            label1.Text = "Add Names";
+            label1.Text = "Names";
             // 
             // label2
             // 
@@ -143,6 +149,24 @@
             panel2.Size = new Size(337, 100);
             panel2.TabIndex = 7;
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Silver;
+            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(48, 557);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(200, 25);
+            textBox1.TabIndex = 8;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(93, 599);
+            button1.Name = "button1";
+            button1.Size = new Size(106, 42);
+            button1.TabIndex = 9;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // RandomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -170,5 +194,7 @@
         private Label label1;
         private Label label3;
         private Panel panel2;
+        private Button button1;
+        private TextBox textBox1;
     }
 }
