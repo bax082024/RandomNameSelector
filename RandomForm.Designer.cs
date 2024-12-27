@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            listBoxSelectedNames = new ListBox();
             numericUpDownCount = new NumericUpDown();
             panel3 = new Panel();
             buttonPickRandom = new Button();
@@ -37,8 +38,6 @@
             label4 = new Label();
             buttonAddName = new Button();
             textBoxNameInput = new TextBox();
-            panel2 = new Panel();
-            labelRandomName = new Label();
             label3 = new Label();
             lblTitle = new Label();
             label2 = new Label();
@@ -48,19 +47,18 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCount).BeginInit();
             panel3.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(listBoxSelectedNames);
             panel1.Controls.Add(numericUpDownCount);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(buttonMove);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(buttonAddName);
             panel1.Controls.Add(textBoxNameInput);
-            panel1.Controls.Add(panel2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(label2);
@@ -72,6 +70,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1074, 721);
             panel1.TabIndex = 0;
+            // 
+            // listBoxSelectedNames
+            // 
+            listBoxSelectedNames.Anchor = AnchorStyles.None;
+            listBoxSelectedNames.BackColor = Color.DarkSlateGray;
+            listBoxSelectedNames.Font = new Font("Stencil", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listBoxSelectedNames.ForeColor = Color.OrangeRed;
+            listBoxSelectedNames.FormattingEnabled = true;
+            listBoxSelectedNames.ItemHeight = 29;
+            listBoxSelectedNames.Location = new Point(367, 283);
+            listBoxSelectedNames.Name = "listBoxSelectedNames";
+            listBoxSelectedNames.Size = new Size(276, 91);
+            listBoxSelectedNames.TabIndex = 17;
+            listBoxSelectedNames.TabStop = false;
             // 
             // numericUpDownCount
             // 
@@ -103,7 +115,7 @@
             buttonPickRandom.TabIndex = 11;
             buttonPickRandom.Text = "START";
             buttonPickRandom.UseVisualStyleBackColor = true;
-            buttonPickRandom.Click += buttonPickRandom_Click;
+            buttonPickRandom.Click += buttonStart_Click;
             // 
             // buttonReset
             // 
@@ -159,28 +171,6 @@
             textBoxNameInput.Name = "textBoxNameInput";
             textBoxNameInput.Size = new Size(200, 25);
             textBoxNameInput.TabIndex = 8;
-            // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.None;
-            panel2.BackColor = Color.Silver;
-            panel2.Controls.Add(labelRandomName);
-            panel2.Location = new Point(344, 283);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(337, 100);
-            panel2.TabIndex = 7;
-            // 
-            // labelRandomName
-            // 
-            labelRandomName.Anchor = AnchorStyles.None;
-            labelRandomName.AutoSize = true;
-            labelRandomName.Font = new Font("Stencil", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelRandomName.Location = new Point(60, 32);
-            labelRandomName.Name = "labelRandomName";
-            labelRandomName.Size = new Size(227, 34);
-            labelRandomName.TabIndex = 2;
-            labelRandomName.Text = "Random Name";
-            labelRandomName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -264,8 +254,6 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCount).EndInit();
             panel3.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -274,12 +262,10 @@
         private Panel panel1;
         private ListBox listBoxUsedNames;
         private ListBox listBoxNames;
-        private Label labelRandomName;
         private Label lblTitle;
         private Label label2;
         private Label label1;
         private Label label3;
-        private Panel panel2;
         private Button buttonAddName;
         private TextBox textBoxNameInput;
         private Label label4;
@@ -288,5 +274,6 @@
         private Button buttonMove;
         private Panel panel3;
         private NumericUpDown numericUpDownCount;
+        private ListBox listBoxSelectedNames;
     }
 }

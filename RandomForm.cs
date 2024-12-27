@@ -4,23 +4,18 @@ namespace RandomNameSelector
     {
         private const string SessionFilePath = "session.json";
 
-
         public RandomForm()
         {
             InitializeComponent();
 
+            // Attach events
             this.FormClosing += RandomNameSelectorForm_FormClosing;
             this.Load += RandomNameSelectorForm_Load;
-
-            LoadSession();
-
             listBoxNames.DragEnter += listBoxNames_DragEnter;
             listBoxNames.DragDrop += listBoxNames_DragDrop;
-
-            
         }
 
-        private void buttonPickRandom_Click(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e)
         {
             int numberOfNamesToPick = (int)numericUpDownCount.Value;
 
@@ -37,22 +32,17 @@ namespace RandomNameSelector
             }
 
             Random random = new Random();
-            List<string> pickedNames = new List<string>();
+            listBoxSelectedNames.Items.Clear();
 
             for (int i = 0; i < numberOfNamesToPick; i++)
             {
                 int randomIndex = random.Next(listBoxNames.Items.Count);
                 string pickedName = listBoxNames.Items[randomIndex].ToString();
 
-                pickedNames.Add(pickedName);
-
-                // Move the picked name to the Used Names list
+                listBoxSelectedNames.Items.Add(pickedName);
                 listBoxUsedNames.Items.Add(pickedName);
                 listBoxNames.Items.RemoveAt(randomIndex);
             }
-
-            // Display the picked names in the label or another control
-            labelRandomName.Text = string.Join(", ", pickedNames);
         }
 
         private void buttonAddName_Click(object sender, EventArgs e)
@@ -78,31 +68,20 @@ namespace RandomNameSelector
         {
             listBoxNames.Items.Clear();
             listBoxUsedNames.Items.Clear();
-
-            labelRandomName.Text = "Random Name";
-
+            listBoxSelectedNames.Items.Clear();
             textBoxNameInput.Clear();
         }
 
-       
         private void buttonMove_Click(object sender, EventArgs e)
         {
-            if (listBoxUsedNames.Items.Count > 0)
+            foreach (var item in listBoxUsedNames.Items)
             {
-                foreach (var item in listBoxUsedNames.Items)
+                if (!listBoxNames.Items.Contains(item))
                 {
                     listBoxNames.Items.Add(item);
                 }
-
-                listBoxUsedNames.Items.Clear();
             }
-            else
-            {
-                MessageBox.Show("The 'Used Names' list is already empty.",
-                                "No Names to Move",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-            }
+            listBoxUsedNames.Items.Clear();
         }
 
         private void listBoxNames_DragEnter(object sender, DragEventArgs e)
@@ -140,23 +119,18 @@ namespace RandomNameSelector
 
                         foreach (string line in lines)
                         {
-                            if (!string.IsNullOrWhiteSpace(line))
+                            string trimmedLine = line.Trim();
+                            if (!string.IsNullOrWhiteSpace(trimmedLine) && !listBoxNames.Items.Contains(trimmedLine))
                             {
-                                listBoxNames.Items.Add(line.Trim());
+                                listBoxNames.Items.Add(trimmedLine);
                             }
                         }
 
-                        MessageBox.Show($"Names from {Path.GetFileName(file)} have been added!",
-                                        "Success",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
+                        MessageBox.Show($"Names from {Path.GetFileName(file)} have been added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Error reading file: {ex.Message}",
-                                        "Error",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                        MessageBox.Show($"Error reading file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -197,12 +171,12 @@ namespace RandomNameSelector
                     if (sessionData != null)
                     {
                         listBoxNames.Items.Clear();
+                        listBoxUsedNames.Items.Clear();
+
                         foreach (var name in sessionData.Names)
                         {
                             listBoxNames.Items.Add(name);
                         }
-
-                        listBoxUsedNames.Items.Clear();
                         foreach (var usedName in sessionData.UsedNames)
                         {
                             listBoxUsedNames.Items.Add(usedName);
@@ -231,10 +205,5 @@ namespace RandomNameSelector
         {
             LoadSession();
         }
-
-
-
-
-
     }
 }
