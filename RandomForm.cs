@@ -56,7 +56,8 @@ namespace RandomNameSelector
             textBoxNameInput.Clear();
         }
 
-        private void btnMove_Click(object sender, EventArgs e)
+       
+        private void buttonMove_Click(object sender, EventArgs e)
         {
             // Check if the Used Names list has any items
             if (listBoxUsedNames.Items.Count > 0)
@@ -81,5 +82,25 @@ namespace RandomNameSelector
             }
         }
 
+        private void listBoxNames_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                if (files.All(file => file.EndsWith(".txt", StringComparison.OrdinalIgnoreCase)))
+                {
+                    e.Effect = DragDropEffects.Copy; // Show Copy cursor
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None; // Disallow drop
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
     }
 }

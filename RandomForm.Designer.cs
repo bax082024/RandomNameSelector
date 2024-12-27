@@ -43,16 +43,18 @@
             label1 = new Label();
             listBoxUsedNames = new ListBox();
             listBoxNames = new ListBox();
+            btnSettings = new Button();
+            panel3 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(panel3);
             panel1.Controls.Add(buttonMove);
-            panel1.Controls.Add(buttonReset);
-            panel1.Controls.Add(buttonPickRandom);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(buttonAddName);
             panel1.Controls.Add(textBoxNameInput);
@@ -83,10 +85,11 @@
             // 
             // buttonReset
             // 
+            buttonReset.Anchor = AnchorStyles.None;
             buttonReset.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonReset.Location = new Point(395, 571);
+            buttonReset.Location = new Point(0, 173);
             buttonReset.Name = "buttonReset";
-            buttonReset.Size = new Size(233, 84);
+            buttonReset.Size = new Size(230, 70);
             buttonReset.TabIndex = 12;
             buttonReset.Text = "RESET";
             buttonReset.UseVisualStyleBackColor = true;
@@ -94,10 +97,11 @@
             // 
             // buttonPickRandom
             // 
+            buttonPickRandom.Anchor = AnchorStyles.None;
             buttonPickRandom.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonPickRandom.Location = new Point(395, 462);
+            buttonPickRandom.Location = new Point(3, 3);
             buttonPickRandom.Name = "buttonPickRandom";
-            buttonPickRandom.Size = new Size(233, 84);
+            buttonPickRandom.Size = new Size(230, 70);
             buttonPickRandom.TabIndex = 11;
             buttonPickRandom.Text = "START";
             buttonPickRandom.UseVisualStyleBackColor = true;
@@ -223,6 +227,28 @@
             listBoxNames.Size = new Size(200, 319);
             listBoxNames.TabIndex = 0;
             // 
+            // btnSettings
+            // 
+            btnSettings.Anchor = AnchorStyles.None;
+            btnSettings.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSettings.Location = new Point(3, 87);
+            btnSettings.Name = "btnSettings";
+            btnSettings.Size = new Size(230, 70);
+            btnSettings.TabIndex = 14;
+            btnSettings.Text = "SETTINGS";
+            btnSettings.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.None;
+            panel3.Controls.Add(buttonPickRandom);
+            panel3.Controls.Add(btnSettings);
+            panel3.Controls.Add(buttonReset);
+            panel3.Location = new Point(388, 405);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(243, 251);
+            panel3.TabIndex = 15;
+            // 
             // RandomForm
             // 
             AcceptButton = buttonAddName;
@@ -237,6 +263,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -257,5 +284,7 @@
         private Button buttonReset;
         private Button buttonPickRandom;
         private Button buttonMove;
+        private Panel panel3;
+        private Button btnSettings;
     }
 }
