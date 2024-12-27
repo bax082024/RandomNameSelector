@@ -205,5 +205,19 @@ namespace RandomNameSelector
         {
             LoadSession();
         }
+
+        public RandomForm()
+        {
+            InitializeComponent();
+
+            this.FormClosing += RandomNameSelectorForm_FormClosing;
+            this.Load += RandomNameSelectorForm_Load;
+
+            // Attach the Paint event for the gradient background
+            this.Paint += RandomForm_Paint;
+
+            LoadSession();
+        }
+
     }
 }
