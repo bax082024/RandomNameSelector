@@ -213,10 +213,25 @@ namespace RandomNameSelector
             this.FormClosing += RandomNameSelectorForm_FormClosing;
             this.Load += RandomNameSelectorForm_Load;
 
-            // Attach the Paint event for the gradient background
             this.Paint += RandomForm_Paint;
 
             LoadSession();
+        }
+
+        private void RandomForm_Paint(object sender, PaintEventArgs e)
+        {
+            Color startColor = Color.LightBlue;
+            Color endColor = Color.DarkBlue;
+
+            using (var gradientBrush = new System.Drawing.Drawing2D.LinearGradientBrush(
+                this.ClientRectangle,
+                startColor, 
+                endColor, 
+                System.Drawing.Drawing2D.LinearGradientMode.Vertical 
+            ))
+            {
+                e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+            }
         }
 
     }
