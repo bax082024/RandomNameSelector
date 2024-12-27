@@ -200,6 +200,12 @@ namespace RandomNameSelector
             public List<string> UsedNames { get; set; }
         }
 
+        private void RandomNameSelectorForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveSession();
+        }
+
+
 
 
 
