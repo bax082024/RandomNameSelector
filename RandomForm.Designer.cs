@@ -94,10 +94,10 @@
             // 
             labelRandomName.Anchor = AnchorStyles.None;
             labelRandomName.AutoSize = true;
-            labelRandomName.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRandomName.Font = new Font("Stencil", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelRandomName.Location = new Point(60, 32);
             labelRandomName.Name = "labelRandomName";
-            labelRandomName.Size = new Size(214, 32);
+            labelRandomName.Size = new Size(227, 34);
             labelRandomName.TabIndex = 2;
             labelRandomName.Text = "Random Name";
             labelRandomName.TextAlign = ContentAlignment.MiddleCenter;
@@ -128,10 +128,10 @@
             // 
             lblTitle.Anchor = AnchorStyles.None;
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Snap ITC", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(192, 29);
+            lblTitle.Font = new Font("Snap ITC", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(88, 22);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(665, 63);
+            lblTitle.Size = new Size(879, 82);
             lblTitle.TabIndex = 5;
             lblTitle.Text = "Random Name Selector";
             // 
@@ -139,10 +139,10 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Font = new Font("Showcard Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(344, 199);
+            label3.Font = new Font("Showcard Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(332, 189);
             label3.Name = "label3";
-            label3.Size = new Size(337, 33);
+            label3.Size = new Size(367, 36);
             label3.TabIndex = 6;
             label3.Text = "The Choosen Name Is :";
             // 
